@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--Referenciamos los estilos CSS-->
+    <link rel="stylesheet" href="style.css">
+    <title>Predict Diabetes</title>
+</head>
+<body>
+    <!--Estructuramos el formulario con los campos necesarios-->
+    <div class="container">
+        <h1>FORMULARIO DE PREDICCION DE DIABETES</h1>
+        <form id="diabetesForm">
+            <label for="pregnancies">Embarazos:</label>
+            <input type="number" id="pregnancies" name="pregnancies" required class="form-control" min="0">
+
+            <label for="glucose">Glucosa:</label>
+            <input type="number" id="glucose" name="glucose" required class="form-control" min="0">
+
+            <label for="blood_pressure">Presion Arterial:</label>
+            <input type="number" id="blood_pressure" name="blood_pressure" required class="form-control" min="0">
+
+            <label for="skin_thickness">Grosor de la piel:</label>
+            <input type="number" id="skin_thickness" name="skin_thickness" required class="form-control" min="0">
+
+            <label for="insulin">Insulina:</label>
+            <input type="number" id="insulin" name="insulin" required class="form-control" min="0">
+
+            <label for="bmi">IMC(Índice de Masa Corporal):</label>
+            <input type="number" id="bmi" name="bmi" step="0.1" required class="form-control" min="0">
+
+            <label for="diabetes_pedigree_function">Función genealógica de la diabetes:</label>
+            <input type="number" id="diabetes_pedigree_function" name="diabetes_pedigree_function" step="0.001" required class="form-control" min="0">
+
+            <label for="age">Edad:</label>
+            <input type="number" id="age" name="age" required class="form-control" min="0">
+            <!--Boton para enviar los datos y limpiar-->
+            <button type="button" onclick="predictDiabetes()" class="btn btn-primary btn-block">Predicción</button>
+            <button type="button" onclick="clearForm()" class="btn btn-secondary btn-block">Clear</button>
+        </form>
+
+        <!--Mostramos los resultados-->
+        <h2 class="text-center mt-4">Resultado de la Prediccion:</h2> 
+        <div id="predictionResult" class="text-center"></div>
+    </div>
+    <!--Referenciamos la logica de javascript-->
+    <script src="prediccion.js"></script>
+</body>
+</html>
